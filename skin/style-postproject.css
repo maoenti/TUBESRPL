@@ -1,0 +1,192 @@
+body
+{
+	margin: 0 auto;
+}
+
+.header
+{
+	height: 90px;
+	background-color: #2C3E50;
+}
+
+.header-container
+{
+	margin-right: 65px;
+	margin-left: 65px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav
+{
+	height: 90px;
+	display: flex;
+	align-items: center;
+}
+
+.nav-container
+{
+	display: flex;
+	justify-content: center;
+	height: 90px;
+}
+
+.nav-btn
+{
+	margin-right: 22px;
+	margin-left: 22px;
+	display: flex;
+	align-items: center;
+	
+}
+
+.nav-btn:hover
+{
+	border-bottom: 7px solid #7F8C8D;
+	transition: 300ms;
+}
+
+.nav-btn a
+{
+	text-decoration: none;
+	color: #ECF0F1;
+	font-size: 24px;
+	font-family: Raleway;
+	font-weight: 300;
+}
+
+.nav-btn[target]
+{
+	border-bottom: 7px solid #7F8C8D;
+	padding-top: 7px;
+}
+
+.profile
+{
+	display: flex;
+	align-items: center;
+}
+
+.profile-container
+{
+	display: flex;
+}
+
+.btn-profile, .btn-profile2
+{
+	width: 128px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+}
+
+.btn-profile
+{
+	border: 1px solid #ECF0F1;
+	margin-right: 38px;
+}
+
+.btn-profile2
+{
+	background-color: #1ABC9C;
+}
+
+.btn-profile2 a, .btn-profile a
+{
+	color: #ECF0F1;
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: 300;
+	font-family: Raleway;
+}
+
+.logo
+{
+	display: flex;
+	align-items: center;
+}
+
+.logo-container
+{
+	display: flex;
+	align-items: center;
+}
+
+.logo-name p
+{
+	color: white;
+	font-weight: bold;
+	font-size: 24px;
+	font-family: Oswald;
+}
+
+.logo-name
+{
+	margin-left: 25px;
+}
+
+.main-container
+{
+	margin-left: 150px;
+	margin-right: 150px;
+	display: flex;
+	flex-direction: column;
+	color: #2C3E50;
+	max-width: 844px;
+	height: 100%;
+	margin-top: 50px;
+	font-family: Raleway;
+	margin-bottom: 50px;
+}
+
+input
+{
+	width: 383px;
+	height: 45px;
+	background-color: #ECF0F1;
+	border: none;
+	font-size: 24px;
+}
+
+textarea
+{
+	width: 100%;
+	height: 177px;
+	background-color: #ECF0F1;
+	border: none;
+}
+
+hr
+{
+	width: 100%;
+	border: 1px solid #FF735C;
+}
+
+h1
+{
+	font-size: 48px;
+}
+
+h2
+{
+	font-size: 24px;
+}
+
+table
+{
+	width: 100%;
+}
+
+button[type=submit]
+{
+	background-color: #1ABC9C;
+	width: 112px;
+	height: 47px;
+	font-family: Raleway;
+	font-size: 24px;
+	border-radius: 15px;
+	border: none;
+	color: #ECF0F1;
+}

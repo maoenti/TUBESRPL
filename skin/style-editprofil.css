@@ -1,0 +1,221 @@
+body
+{
+	margin: 0 auto;
+}
+
+.header
+{
+	height: 90px;
+	background-color: #2C3E50;
+}
+
+.header-container
+{
+	margin-right: 65px;
+	margin-left: 65px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav
+{
+	height: 90px;
+	display: flex;
+	align-items: center;
+}
+
+.nav-container
+{
+	display: flex;
+	justify-content: center;
+	height: 90px;
+}
+
+.nav-btn
+{
+	margin-right: 22px;
+	margin-left: 22px;
+	display: flex;
+	align-items: center;
+	
+}
+
+.nav-btn:hover
+{
+	border-bottom: 7px solid #7F8C8D;
+	transition: 300ms;
+}
+
+.nav-btn a
+{
+	text-decoration: none;
+	color: #ECF0F1;
+	font-size: 24px;
+	font-family: Raleway;
+	font-weight: 300;
+}
+
+.nav-btn[target]
+{
+	border-bottom: 7px solid #7F8C8D;
+	padding-top: 7px;
+}
+
+.logo
+{
+	display: flex;
+	align-items: center;
+}
+
+.logo-container
+{
+	display: flex;
+	align-items: center;
+}
+
+.logo-name p
+{
+	color: white;
+	font-weight: bold;
+	font-size: 24px;
+	font-family: Oswald;
+}
+
+.logo-name
+{
+	margin-left: 25px;
+}
+
+.main-container
+{
+	margin-left: 150px;
+	margin-right: 150px;
+	display: flex;
+	flex-direction: column;
+	color: #2C3E50;
+	max-width: 844px;
+	height: 100%;
+	margin-top: 50px;
+	font-family: Raleway;
+	margin-bottom: 50px;
+}
+
+.profile
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile p
+{
+	color: #ECF0F1;
+	font-family: Raleway;
+	margin-right: 20px;
+	font-size: 24px;
+}
+
+hr
+{
+	width: 100%;
+	border: 1px solid #FF735C;
+}
+
+h1
+{
+	font-size: 48px;
+}
+
+.left
+{
+	width: 326px;
+	margin-right: 15px;
+}
+
+.left ul
+{
+	list-style: none;
+}
+
+.left ul li
+{
+	background-color: #2C3E50;
+	height: 51px;
+	display: flex;
+	align-items: center;
+	border-left: 12px solid #FF735C;
+	transition: 300ms;
+}
+
+.left a
+{
+	color: #ECF0F1;
+	text-decoration: none;
+	font-family: Raleway;
+	font-size: 24px;
+	font-weight: 300;
+	margin-left: 15px;
+}
+
+.left ul li:hover
+{
+	border-left: 24px solid #FF735C;
+	transition: border-left 300ms ease;
+}
+
+.right
+{
+	width: 439px;
+	background: #2C3E50;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 25px;
+	color: #ECF0F1;
+	padding: 15px;
+	font-family: Raleway;
+}
+
+.content
+{
+	display: flex;
+}
+
+table
+{
+	width: 100%;
+}
+
+.right table input
+{
+	width: 100%;
+	border: none;
+
+	background: #ECF0F1;
+}
+
+.right table input[type=radio]
+{
+	width: 3%;
+}
+
+button[type=submit]
+{
+	width: 307px;
+	height: 45px;
+	background: #1ABC9C;
+	border-radius: 15px;
+	color: #ECF0F1;
+	border: none;
+	font-family: Raleway;
+	font-size: 16px;
+}
+
+input[type=text], input[type=tel], input[type=email]
+{
+	height: 45px;
+}
+
+.centerbtn
+{
+	display: flex;
+	justify-content: center;
+}
