@@ -22,6 +22,22 @@ session_start();
 // Membuat objek dari kelas task
 $otask = new Task($db_host, $db_user, $db_password, $db_name);
 $otask->open();
+
+if( isset($_POST['done'])){
+	$title = $_POST['title'];
+    $location = $_POST['location'];
+    $category = $_POST['category'];
+    $date = $_POST['date'];
+    $desc = htmlspecialchars($_POST['desc']);
+    if(isset($_SESSION['username'])){
+    
+        
+        $otask->addProjectBaru($_SESSION['username'] , $title, $location , $category, $date, $desc);
+        // echo "<script type='text/javascript'>alert('Project Berhasil Ditambahkan!');</script>";
+        // header('Refresh: 2; URL = projects.php');
+        
+    }
+}
 //$id, $tname, $tnim, $tp1, $tp2, $tp3, $tkelas
 // Menutup koneksi database
 $otask->close();

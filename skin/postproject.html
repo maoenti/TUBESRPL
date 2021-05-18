@@ -48,8 +48,8 @@
 			<div class="main-container">
 				<h1>Add Project</h1>
 				<hr>
-				<form>
-					<h2>Admin Profile</h2>
+				<form method = "POST">
+					<!--<h2>Admin Profile</h2>
 					<table>
 						<tr>
 							<td>
@@ -71,37 +71,37 @@
 								<input type="text" name="">
 							</td>
 						</tr>
-					</table>
+					</table> -->
 					<h2>Project Description</h2>
 					<table>
 						<tr>
 							<td>
 								<label>Title</label><br>
-								<input type="text" name="">
+								<input type="text" name="title">
 							</td>
 							<td>
 								<label>Location</label><br>
-								<input type="email" name="">
+								<input type="text" name="location">
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<label>Category</label><br>
-								<input type="tel" name="">
+								<input type="text" name="category">
 							</td>
 							<td>
 								<label>Date</label><br>
-								<input type="date" name="">
+								<input type="date" name="date">
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2">
 								<label>Description</label><br>
-								<textarea></textarea>
+								<textarea name="desc"></textarea>
 							</td>
 						</tr>
 					</table>
-					<button type="submit">Done</button>
+					<button type="submit" name ="done">Done</button>
 				</form>
 			</div>
 		</div>
