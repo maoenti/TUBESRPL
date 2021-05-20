@@ -1,18 +1,6 @@
 <?php
 
-/******************************************
-TP4 IQBAL ZAIN 1901423
 
-ITU DESKRIPSI
-
--------------------------------------------------------------
-Saya Muhammad Iqbal Zain mengerjakan TP4PBO2021 dalam mata kuliah DPBO
-untuk keberkahanNya maka saya tidak melakukan
-kecurangan seperti yang telah di spesifikasikan.
-Aamiin.
-
-ITU KOMEN
-******************************************/
  
       
 include("conf.php");
