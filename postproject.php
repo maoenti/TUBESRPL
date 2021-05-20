@@ -30,12 +30,12 @@ if( isset($_POST['done'])){
     $date = $_POST['date'];
     $desc = htmlspecialchars($_POST['desc']);
     if(isset($_SESSION['username'])){
-    
-        
         $otask->addProjectBaru($_SESSION['username'] , $title, $location , $category, $date, $desc);
-        // echo "<script type='text/javascript'>alert('Project Berhasil Ditambahkan!');</script>";
-        // header('Refresh: 2; URL = projects.php');
+        echo "<script type='text/javascript'>alert('Project Berhasil Ditambahkan!');</script>";
+        header('Refresh: 1; URL = projects.php');
         
+    }else{
+        echo "<script type='text/javascript'>alert('Anda harus login terlebih dahulu!');</script>";
     }
 }
 //$id, $tname, $tnim, $tp1, $tp2, $tp3, $tkelas

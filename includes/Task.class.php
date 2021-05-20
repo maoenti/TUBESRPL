@@ -14,6 +14,24 @@ class Task extends DB{
 	// 	// Mengeksekusi query
 	// 	return $this->execute($query);
 	// }
+	
+	function getProject(){
+		$query = "SELECT * FROM tb_project";
+		
+		// Mengeksekusi query
+		return $this->execute($query);
+	}
+	function getProjectByID($id){
+		$query = "SELECT * FROM tb_project WHERE id_project = $id";
+		// Mengeksekusi query
+		return $this->execute($query);
+	}
+
+	function getUserByID($id){
+		$query = "SELECT * FROM tb_user WHERE id = $id";
+		// Mengeksekusi query
+		return $this->execute($query);
+	}
 	//ERROR BGSTTT--------------------------------------------------------
 	function cekUsername($username){ 
 		// Query mysql select data ke tb_to_do
@@ -31,15 +49,16 @@ class Task extends DB{
 	}
 	
 	function addProjectBaru($usernameOwner , $title, $location , $category, $date_project, $desc){
-		$sql = "SELECT * FROM tb_user WHERE username = ' $usernameOwner '";
-		$retval = mysqli_query($this->getLink(),$sql);
-		$id_user = mysqli_fetch_array($retval);
-		echo print_r($retval) ;
-		// echo "<script type='text/javascript'>alert('$id_user');</script>";
-		// $query = "INSERT INTO tb_project (id_owner , status, title, location, category, date_project , description) VALUES ('$x' , 0, '$title','$location', '$category', '$date_project', '$desc');";
+		$query = "SELECT id FROM tb_user WHERE username = '$usernameOwner'";
+		$this->execute($query);
+		$id_user = $this->getResult();
+		// echo print_r($id_user) ;
+		$x = $id_user["id"];
+		
+		$query = "INSERT INTO tb_project (id_owner , status, title, location, category, date_project , description) VALUES ('$x' , 0, '$title','$location', '$category', '$date_project', '$desc');";
 		
 		// // Mengeksekusi query
-		// $this->execute($query);
+		$this->execute($query);
 	}
 
 	// function update_nilai($id,$par){
