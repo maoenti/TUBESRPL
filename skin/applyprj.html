@@ -27,14 +27,14 @@
 						<div class="nav-btn">
 							<a href="index.php">Home</a>
 						</div>
-						<div class="nav-btn" >
+						<div class="nav-btn" target="_blank">
 							<a href="projects.php">Projects</a>
 							
 						</div>
 						<div class="nav-btn">
 							<a href="">Contact</a>
 						</div>
-						<div class="nav-btn" target="_blank">
+						<div class="nav-btn" >
 							<a href="postproject.php">Post a Project</a>
 						</div>
 					</div>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="main">
 			<div class="main-container">
-				<h1>Add Project</h1>
+				<h1>Apply Project</h1>
 				<hr>
 				<form method = "POST">
 					<!--<h2>Admin Profile</h2>
@@ -72,31 +72,44 @@
 							</td>
 						</tr>
 					</table> -->
-					<h2>Project Description</h2>
+					<h2>Applicant Description</h2>
 					<table>
 						<tr>
 							<td>
-								<label>Title</label><br>
-								<input required type="text" name="title">
+								<label>Full Name</label><br>
+								<input required type="text" name="fname" required>
 							</td>
 							<td>
-								<label>Location</label><br>
-								<input required type="text" name="location">
+								<label>Address</label><br>
+								<input required type="text" name="address"required>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<label>Category</label><br>
-								<input required type="text" name="category">
+								<label>Male</label><input required type="radio" id="male" name="gender" value="male">
+                                <label>Female</label><input required type="radio" id="female" name="gender" value="female">
 							</td>
 							<td>
-								<label>Date</label><br>
-								<input required type="date" name="date">
+								<label>Birth Date</label><br>
+								<input required type="date" name="birthdate"required>
+							</td>
+						</tr>
+                        <tr>
+							<td>
+								<label>Phone Number</label><br>
+								<input required type="tel" name="telnum"required>
+							</td>
+							
+						</tr>
+                        <tr>
+							<td>
+								<label>Required Data (Google Drive)</label><br>
+								<input required type="text" name="reqdat"required>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2">
-								<label>Description</label><br>
+								<label>Describe your experiences</label><br>
 								<textarea name="desc"></textarea>
 							</td>
 						</tr>

@@ -8,35 +8,37 @@ include("includes/Task.class.php");
 session_start();
 // Membuat objek dari kelas task
 $otask = new Task($db_host, $db_user, $db_password, $db_name);
+
+
 $otask->open();
+//$id, $tname, $tnim, $tp1, $tp2, $tp3, $tkelas
 
-$otask->getActiveProject();
-$data = null;
-
-while (list($id_project, $id_owner, $status, $end_date, $title, $location, $category, $date_project, $desc) = $otask->getResult()) {
-	// Tampilan jika status task nya sudah dikerjakan
-
-    $data .= "<div class='prj-box'>".
-        "<a href='projectdetail.php?id_project=".$id_project. "'>".
-            "<div class='prj-title'>".
-                "<img src='img/header/rectangle.png' alt=''>".
-                "<div class='judul'>".
-                    "<h1>".$title."</h1>".
-                    "<p>".$location."</p>".
-                "</div>".
-            "</div>".
-            "<div class='prj-desc'>".
-                "<p>".$desc."</p>".
-            "</div>".
-        "</a>".
-    "</div>";
+if(isset($_GET['id_project'])){
+    $idproject = $_GET['id_project'];
+    $applicant = $otask->getUserIdByUsername($_SESSION['username']);
+    $owner = $otask->getUserIdByProjectId($_GET['id_project']);
+    
+    if( isset($_POST['done'])){
+        $full_name = $_POST['fname'];
+        $address = $_POST['address'];
+        $sex = $_POST['gender'];
+        $birth_date = $_POST['birthdate'];
+        $phone_num = $_POST['telnum'];
+        $req_data = $_POST['reqdat'];
+        $experiences = htmlspecialchars($_POST['desc']);
+        $otask->addApplyProject($applicant, $idproject, $owner, $full_name, $address, $sex, $birth_date, $phone_num, $req_data, $experiences );
+        echo "<script type='text/javascript'>alert('Pendaftaran Berhasil!');</script>";
+        header('Refresh: 0; URL = projects.php');
+    }
+    
 }
+
+
 // Menutup koneksi database
 $otask->close();
 
 // Membaca template skin.html
-$tpl = new Template("skin/projects.html");
-
+$tpl = new Template("skin/applyprj.html");
 $profilDefault = "<div class='profile-container'>
 <div class='btn-profile'>
     <a href='login.php'>Login</a>
@@ -59,6 +61,5 @@ if(isset($_SESSION['username'])){
     
 }
 $tpl->replace("PROFIL", $profilDefault);
-$tpl->replace("PROJECTLIST", $data);
 // Menampilkan ke layar
 $tpl->write();
