@@ -37,6 +37,13 @@ class Task extends DB{
 		return $this->execute($query);
 	}
 
+	function getFilteredActiveProject($word){
+		$query = "SELECT * FROM tb_project WHERE status = 1 AND title LIKE '%$word%'";
+		
+		// Mengeksekusi query
+		return $this->execute($query);
+	}
+
 	function getProject(){//BENER
 		$query = "SELECT * FROM tb_project";
 		

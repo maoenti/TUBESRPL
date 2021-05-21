@@ -9,8 +9,13 @@ session_start();
 // Membuat objek dari kelas task
 $otask = new Task($db_host, $db_user, $db_password, $db_name);
 $otask->open();
+if( isset($_POST['sort'])){
+    $word = $_POST['search'];
+    $otask->getFilteredActiveProject($word);
+}else{
+    $otask->getActiveProject();
+}
 
-$otask->getActiveProject();
 $data = null;
 
 while (list($id_project, $id_owner, $status, $end_date, $title, $location, $category, $date_project, $desc) = $otask->getResult()) {
