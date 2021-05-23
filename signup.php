@@ -1,8 +1,4 @@
 <?php
-
-
- 
-      
 include("conf.php");
 include("includes/Template.class.php");
 include("includes/DB.class.php");
@@ -28,6 +24,10 @@ if( isset($_POST['signUp'])){
         }
         else{
             $otask->addUserBaru($email , $username, $password);
+            session_start();
+            $_SESSION['valid'] = true;
+            $_SESSION['timeout'] = time();
+            $_SESSION['username'] = $username;
             header("location:index.php");
         }
     }

@@ -52,6 +52,21 @@ $dataAdmin .= "<div class='admin-details'>".
         "<p>".$email."</p>".
     "</div>".
 "</div>";
+
+
+$apply ="<a href='applyprj.php?id_project=".$projectId. "'>".
+    "<p>Apply Now</p>".
+"</a>";
+
+if(isset($_GET['id_project'])){
+    $applicant = $otask->getUserIdByUsername($_SESSION['username']);
+    $owner = $otask->getUserIdByProjectId($_GET['id_project']);
+    if($applicant === $owner){
+        $apply ="<a href='applicantDetails.php?id_project=".$projectId. "'>".
+            "<p>Details</p>".
+        "</a>";
+    }
+}
 // Menutup koneksi database
 $otask->close();
 
@@ -79,8 +94,12 @@ if(isset($_SESSION['username'])){
     </div>";
     
 }
+
+
+
 $tpl->replace("PROFIL", $profilDefault);
 $tpl->replace("DATAPROJECT", $data);
 $tpl->replace("DATAADMIN", $dataAdmin);
+$tpl->replace("APPLYNOW", $apply);
 // Menampilkan ke layar
 $tpl->write();

@@ -13,15 +13,20 @@ $otask->open();
 if( isset($_POST['login'])){
     $username = $_POST['uname'];
     $password = $_POST['pass'];
-    $check = mysqli_query($otask->getLink(),"SELECT * FROM tb_user WHERE username = '$username' AND password = '$password'");
     
-    if (mysqli_num_rows($check)=== 1) {
-        $_SESSION['valid'] = true;
-        $_SESSION['timeout'] = time();
-        $_SESSION['username'] = $username;
-        header("location:index.php");
-    }else{
-        echo "<script type='text/javascript'>alert('Username dan password salah!');</script>";
+    if($username === "admin" && $password === "admin"){
+        header("location:admin.php");
+    } 
+    else {
+        $check = mysqli_query($otask->getLink(),"SELECT * FROM tb_user WHERE username = '$username' AND password = '$password'");
+        if (mysqli_num_rows($check)=== 1) {
+            $_SESSION['valid'] = true;
+            $_SESSION['timeout'] = time();
+            $_SESSION['username'] = $username;
+            header("location:index.php");
+        }else{
+            echo "<script type='text/javascript'>alert('Username dan password salah!');</script>";
+        }
     }
 }
 // Menutup koneksi database
